@@ -42,25 +42,25 @@ running = "false"
 
 def Check():
 	while("true"):
-		currentCode = randomCode()
-		url = ("https://discordapp.com/api/v6/entitlements/gift-codes/"+ currentCode +"?with_application=false&with_subscription_plan=true" )
+		canimizkodumuz = rastgelekodumuz()
+		url = ("https://discordapp.com/api/v6/entitlements/gift-codes/"+ canimizkodumuz +"?with_application=false&with_subscription_plan=true" )
 		r = requests.get(url, proxies=FormatProxy(ProxiesRandom()))
 		if(r.text == '{"code": 10038, "message": "moruk bak o öyle degil ben sana anlatiyim"}'):
-			print(str(currentCode) + " calismadi rip\n")
+			print(str(canimizkodumuz) + " calismadi rip\n")
 			time.sleep(1)
 		elif 'rate' in r.text:
 			l = [int(''.join(i)) for is_digit, i in groupby(r.text, str.isdigit) if is_digit]
 			makeitastring = ''.join(map(str, l))
-			secounds = float(makeitastring) / 1000
-			print ("ip ban yedik lol " + str(secounds) + "saniye sonra gorusuruz\n")
-			time.sleep(secounds + 3)
+			saniye = float(makeitastring) / 1000
+			print ("ip ban yedik lol " + str(saniye) + "saniye sonra gorusuruz\n")
+			time.sleep(saniye + 3)
 		else:
-			print ("basarili \n \n \n \n %s - hll - \n \n \n \n" % currentCode)
+			print ("basarili \n \n \n \n %s - hll - \n \n \n \n" % canimizkodumuz)
 			out = open("basardim.txt", "a")
-			out.write(str(currentCode))
+			out.write(str(canimizkodumuz))
 			out.write("\n")
 			currentCode += 1
-			print(str(currentCode))
+			print(str(canimizkodumuz))
 			
 kappa = 0
 print(FormatProxy(ProxiesRandom()))
